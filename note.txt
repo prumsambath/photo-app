@@ -1,0 +1,41 @@
+start a project
+  $ rails new photo-app
+
+  # Gemfile
+  ...
+  gem 'devise'
+  gem 'twitter-bootstrap-rails'
+  gem 'devise-bootstrap-views'
+
+  group :production do
+    gem 'pg'
+    gem 'rails_12factor'
+  end
+
+  group :development do
+    gem 'sqlite3'
+    ...
+  end
+
+  $ bundle install --without production
+
+initialize a repo
+  $ git init
+
+  create a repo in Github, add a remote, and push to Github
+
+  $ heroku create
+  $ heroku rename sambath-photo-app
+
+set up devise
+  $ rails g devise:install
+  $ rails g devise User
+  $ rails g devise:views:locale en
+
+set up layout
+  $ rails g bootstrap:install static
+  $ rails g bootstrap:layout application
+  $ rails g devise:views:bootstrap_templates
+
+  # application.css
+  =* require devise_bootstrap_views
