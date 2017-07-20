@@ -39,3 +39,10 @@ set up layout
 
   # application.css
   =* require devise_bootstrap_views
+
+add sendgrid
+  $ heroku addons:create sendgrid:starter
+  then add a credential in sendgrid app
+
+  $ heroku config:set SENDGRID_USERNAME=username
+  $ heroku config:set SENDGRID_PASSWORD=password
